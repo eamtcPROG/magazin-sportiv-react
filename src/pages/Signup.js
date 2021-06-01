@@ -105,14 +105,14 @@ p={8}>
   </FormControl>
   <FormControl id="balance">
     <FormLabel >Balance</FormLabel>
-    <Input  onChange={handleBalancChange} value={balance} type="balance" />
+    <Input  onChange={handleBalancChange} value={balance} type="number" />
   </FormControl>
   <Stack spacing={10}>
     <Button type="Submit"
-      bg={'#202020'}
+      bg={'#233d4d'}
       color={'white'}
       _hover={{
-        bg: '#ffee32',
+        bg: '#619b8a',
         color:"black"
       }}>
       Sign up

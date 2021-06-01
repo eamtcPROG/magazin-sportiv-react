@@ -45,12 +45,16 @@ p={8}>
       <Box w="25%">
         <Link to={`/myprodus/${selectedProdus._id}/edit`}>
           <Button
-            backgroundColor="#202020"
+            backgroundColor="#233d4d"
             color="white"
             textAlign="center"
             w="120px"
             display="block"
             mb="16px"
+            _hover={{
+              bg: '#619b8a',
+              color:"white"
+            }}
           >
             Edit
           </Button>

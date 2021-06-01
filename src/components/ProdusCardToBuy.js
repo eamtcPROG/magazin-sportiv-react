@@ -18,12 +18,12 @@ const ProdusCardToBuy = ({ produs })=> {
         boxShadow="md"
         borderRadius="8px"
         marginBottom="12px"
-        bg="#ffee32"
+        bg="#619b8a"
       >
         
         <Text 
           fontSize="lg"
-          color="#202020"
+          color="white"
           align="center"
           marginTop="1"
           fontWeight="semibold"
@@ -34,7 +34,7 @@ const ProdusCardToBuy = ({ produs })=> {
           {produs.title}
         </Text>
         <Text
-        color="#202020"
+        color="white"
           mt="10%"
           lineHeight="tight"
           isTruncated
@@ -44,7 +44,7 @@ const ProdusCardToBuy = ({ produs })=> {
           Descriere: {produs.text}
         </Text>
         <Text
-        color="#202020"
+        color="white"
           mt="10%"
           lineHeight="tight"
           isTruncated

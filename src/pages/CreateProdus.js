@@ -31,7 +31,7 @@ mb="1%"
 w={"50%"}
 p={8}>
       <Heading as="h1" pb="36px">
-        Creeaza o notita!
+        Adauga un  produs!
       </Heading>
 
       <ProdusForm onSubmitCallback={onSubmitCallback} />

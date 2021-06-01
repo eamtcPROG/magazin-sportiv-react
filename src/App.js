@@ -89,7 +89,7 @@ function App() {
     <div className="App">
 
 
-<Box bg="#202020" px={4}>
+<Box bg="#233d4d" px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
              
           <HStack spacing={8} alignItems={'center'} >
@@ -125,7 +125,7 @@ function App() {
              color="white"
               fontSize={'16px'}
               fontWeight={400}
-              bg={'#202020'}
+              bg={'#fe7f2d'}
               p={"10px"} 
               type={"button"}
               onClick={loguot}
@@ -150,14 +150,14 @@ function App() {
           <Link
             display={{ base: 'none', md: 'inline-flex' }}
             fontSize={'16px'}
-            color={'black'}
+            color={'white'}
             borderRadius={"5%"}
-            bg={'#ffd100'}
+            bg={'#fe7f2d'}
             p={"10px"}
             _hover={{
-              bg: '#ffee32',
+              bg: '#fcca46',
               borderRadius:"5%",
-              color:"white"
+              color:"black"
             }}>
             Sign Up
           </Link>

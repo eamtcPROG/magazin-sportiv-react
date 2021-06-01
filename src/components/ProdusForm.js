@@ -31,14 +31,14 @@ function NoteForm({
           name="title"
           value={value.title}
           onChange={handleInputChange}
-          placeholder="Titlul notitei"
+          placeholder="Titlul produs"
           mb="24px"
         />
         <Textarea
           value={value.text}
           onChange={handleInputChange}
           name="text"
-          placeholder="Detaliile notitei"
+          placeholder="Detaliile produs"
           size="sm"
           mb="24px"
           minHeight="400px"
@@ -47,11 +47,11 @@ function NoteForm({
           name="price"
           value={value.price}
           onChange={handleInputChange}
-          placeholder="Titlul notitei"
+          placeholder="Pret"
           mb="24px"
         />
 
-        <Button type="submit" marginRight="24px">
+        <Button type="submit" marginRight="24px" bg="#fe7f2d" color="white">
           Submit
         </Button>
         {showCancelButton ? (

@@ -58,7 +58,7 @@ function EditProdus(props) {
         w={"50%"}
         p={8}>
       <Heading as="h1" pb="36px">
-        Editeaza o produs!
+        Editeaza un produs!
       </Heading>
 
       <ProdusForm
