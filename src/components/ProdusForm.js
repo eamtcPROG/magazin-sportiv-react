@@ -45,6 +45,7 @@ function NoteForm({
         />
         <Input
           name="price"
+          type="number"
           value={value.price}
           onChange={handleInputChange}
           placeholder="Pret"

@@ -43,13 +43,23 @@ function Login({ setIsAuthenticated }) {
         // eu sunt logat
         return res.json();
       
+      }else{
+        setError('Invalid credentials');
+        setIsAuthenticated(false);
       }
 
-      setError('Invalid credentials');
+      
     }).then((data) => {
-        localStorage.setItem("token", data.token);
-        setIsAuthenticated(true);
-        return history.push('/');
+      try {
+        if(error != null ){  
+          localStorage.setItem("token", data.token);
+          setIsAuthenticated(true);
+          return history.push('/');
+         }
+      } catch(error){console.log(error)} 
+      
+      
+      
       });;
   };
 

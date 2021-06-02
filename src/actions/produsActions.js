@@ -10,7 +10,7 @@ export const getProdusAction = () =>
     });
 
     try {
-      const produs = await fetch(`https://magazin-sportiv-nodejs.herokuapp.com/api/produs`,{
+      const produs = await fetch(`https://magazin-sportiv-nodejs.herokuapp.com/api/produs/market`,{
         method: 'GET',  
       headers: {
           Authorization: localStorage.getItem('token'),

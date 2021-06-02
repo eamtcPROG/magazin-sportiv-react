@@ -19,11 +19,17 @@ const ProdusCard = ({ produs })=> {
         borderRadius="8px"
         marginBottom="12px"
         bg="#619b8a"
+        _hover={{
+          bg: '#fcca46',
+          color:"black",
+          mt: "1%",
+          borderRadius:"15px"
+        }}
       >
         
         <Text 
           fontSize="lg"
-          color="white"
+          color="white"         
           align="center"
           marginTop="1"
           fontWeight="semibold"
