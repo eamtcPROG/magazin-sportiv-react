@@ -27,6 +27,7 @@ const ProdusCardToBuy = ({ produs })=> {
         }}
       >
         
+
         <Text 
           fontSize="lg"
           color="white"
@@ -39,6 +40,13 @@ const ProdusCardToBuy = ({ produs })=> {
         >
           {produs.title}
         </Text>
+        <Flex alignItems="center" justifyContent="center"> 
+        <Image mt="2%"
+        border="3px solid black"
+        boxSize="150px"
+        objectFit="cover"
+        src="https://images.unsplash.com/photo-1580261450046-d0a30080dc9b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=653&q=80"/>
+        </Flex>
         <Text
         color="white"
           mt="10%"

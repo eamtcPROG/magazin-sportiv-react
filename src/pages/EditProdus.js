@@ -34,7 +34,8 @@ function EditProdus(props) {
   const onSubmitCallback = (produs) => {
     const produs_id = selectedProdus._id;
     dispatch(editProdusAction(produs_id, produs)).then(() => {
-      history.push('/myprodus');
+      
+      history.push('/');
       window.location.reload();
     });
   };
