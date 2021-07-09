@@ -54,7 +54,7 @@ function Login({ setIsAuthenticated }) {
         if(error != null ){  
           localStorage.setItem("token", data.token);
           setIsAuthenticated(true);
-          return history.push('/');
+          return history.push('/home');
          }
       } catch(error){console.log(error)} 
       

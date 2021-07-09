@@ -31,6 +31,41 @@ export const getProdusAction = () =>
     }
   };
 
+  export const GET_PRODUS_LOADING_START_ALL = 'GET_PRODUS_LOADING_START_ALL';
+export const GET_PRODUS_SUCCESS_ALL = 'GET_PRODUS_SUCCESS_ALL';
+export const GET_PRODUS_ERROR_ALL = 'GET_PRODUS_ERROR_ALL';
+
+
+export const getProdusActionAll = () => 
+  async (dispatch) => {
+    dispatch({
+      type: GET_PRODUS_LOADING_START_ALL,
+    });
+    
+    try {
+      const produs = await fetch(`https://magazin-sportiv-nodejs.herokuapp.com/api/produs/`,{
+        method: 'GET',  
+      headers: {
+          Authorization: localStorage.getItem('token'),
+        },
+      }).then((res) => res.json());
+    console.log(produs);
+      if(Array.isArray(produs)){
+        dispatch({
+          type: GET_PRODUS_SUCCESS_ALL,
+          payload: produs,
+        });
+      }
+    } catch (error) {
+      dispatch({
+        type: GET_PRODUS_ERROR_ALL,
+        payload: 'Ceva nu a mers bine',
+      });
+    }
+  };
+
+
+
 
 export const CREATE_PRODUS_ERROR = 'CREATE_PRODUS_ERROR';
 export const CREATE_PRODUS_SUCCESS = 'CREATE_PRODUS_SUCCESS';

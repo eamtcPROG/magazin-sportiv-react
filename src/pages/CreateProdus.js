@@ -16,7 +16,7 @@ function CreateProdus() {
 
   const onSubmitCallback = (produs) => {
     dispatch(createProdusAction(produs)).then(() => {
-      history.push('/');
+      history.push('/home');
     });
   };
 

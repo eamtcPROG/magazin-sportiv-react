@@ -74,7 +74,7 @@ function Signup({ setIsAuthenticated }) {
     }).then((data) => {
         localStorage.setItem("token", data.token);
         setIsAuthenticated(true);
-        return history.push('/');
+        return history.push('/home');
       });;
   });
     

@@ -19,8 +19,9 @@ import { useDispatch } from 'react-redux';
 
 
 import Home from './pages/Home';
+import EnterPage from './pages/EnterPage';
 import CreateProdus from './pages/CreateProdus';
-import { getProdusAction,getProdusActionForUser } from './actions/produsActions';
+import { getProdusAction,getProdusActionForUser,getProdusActionAll } from './actions/produsActions';
 import Produs from './pages/Produs';
 import EditProdus from './pages/EditProdus.js';
 import MyProdus from './pages/MyProdus.js';
@@ -87,10 +88,13 @@ function App() {
       dispatch(getProdusAction());
     }
   };
-
+  
   useEffect(() => {
     if(isAuthenticated === true){
       dispatch(getProdusAction());
+    }
+    if(isAuthenticated === false){
+      dispatch(getProdusActionAll());
     }
   }, [dispatch,isAuthenticated]);
   return (
@@ -100,13 +104,22 @@ function App() {
 <Box bg="#233d4d" px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <HStack spacing={8} alignItems={'center'} >          
-            <NavLink  to="/">
+          {isAuthenticated ?
+            <NavLink   to="/home" >
             {isAuthenticated ?
                 <Link  onClick={getProdus} as="h2"  color="white" _hover={{                  
                   color:"#fe7f2d"
                 }}><Heading color="white"  _hover={{color:"#fe7f2d"}} as="h2">Magazin Sportiv</Heading></Link>
                 :<Heading color="white"  _hover={{color:"#fe7f2d"}} as="h2">Magazin Sportiv</Heading>}
-              </NavLink>           
+              </NavLink>    
+              :
+              <NavLink   to="/" >
+            {isAuthenticated ?
+                <Link  onClick={getProdus} as="h2"  color="white" _hover={{                  
+                  color:"#fe7f2d"
+                }}><Heading color="white"  _hover={{color:"#fe7f2d"}} as="h2">Magazin Sportiv</Heading></Link>
+                :<Heading color="white"  _hover={{color:"#fe7f2d"}} as="h2">Magazin Sportiv</Heading>}
+              </NavLink>    }       
           </HStack>
           <Stack
             flex={{  base: 'none', md: 'inline-flex' }}
@@ -220,7 +233,7 @@ function App() {
             isAuthenticated={isAuthenticated}
             render={(props) => <EditProdus {...props} />}
           />
-          
+           
             <PrivateRoute
             path="/myprodus/:id"
             isAuthenticated={isAuthenticated}
@@ -255,11 +268,16 @@ function App() {
           render={(props) => <MyProdus {...props} />}
         />
             <PrivateRoute
-              path="/"      
+              path="/home"      
               isAuthenticated={isAuthenticated}
               render={(props) => <Home {...props} />}
               />
-              
+              <Route
+              path="/"
+              render={(props) => (
+                <EnterPage {...props} setIsAuthenticated={setIsAuthenticated} />
+              )}
+            />
           </Switch>
         </Box>
         </Flex>
